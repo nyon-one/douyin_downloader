@@ -312,6 +312,7 @@ class DownloadWorker(Thread):
     def __init__(self, queue):
         Thread.__init__(self)
         self.queue = queue
+        self.daemon = True
 
     def run(self):
         while True:
