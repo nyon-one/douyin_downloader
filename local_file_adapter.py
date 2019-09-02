@@ -32,7 +32,7 @@ class LocalFileAdapter(requests.adapters.BaseAdapter):
                If-Modified-Since and friends using `os.stat`?
         """
 
-        path_url = req.path_url.split('?')[0]
+        path_url = req.url[7:].split('?')[0]
         path = os.path.normcase(os.path.normpath(url2pathname(path_url)))
         response = requests.Response()
 
